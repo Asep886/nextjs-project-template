@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerajinan - BUMDes Nangggerang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/products.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="https://placehold.co/50x50/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <a href="/">Beranda</a>
+                <a href="about.html">Tentang BUMDes</a>
+                <a href="products.html">Rumah BUMDes</a>
+                <a href="events.html">Hadiah dan Acara</a>
+                <a href="contact.html">Kontak</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="shop-btn">Shop</a>
+                <a href="#" class="search-btn">🔍</a>
+                <a href="cart.html" class="cart-btn">🛒 0 items</a>
+                <a href="#" class="account-btn">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-section">
+            <h1>KERAJINAN</h1>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=AYAKAN" alt="Ayakan">
+                    <h3>AYAKAN</h3>
+                    <p class="price">Rp75.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=BOBOKO" alt="Boboko">
+                    <h3>BOBOKO</h3>
+                    <p class="price">Rp30.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=GELAS+BAMBU" alt="Gelas Bambu">
+                    <h3>GELAS BAMBU</h3>
+                    <p class="price">Rp10.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=HIHID" alt="Hihid/Kipas Sate">
+                    <h3>HIHID/KIPAS SATE</h3>
+                    <p class="price">Rp70.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=SAPU+LIDI" alt="Sapu Lidi">
+                    <h3>SAPU LIDI</h3>
+                    <p class="price">Rp20.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://placehold.co/150x150/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                <h3>BUMDes Desa Nangggerang</h3>
+                <p>Cigelontang - Tasikmalaya</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Pesona BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Sertifikasi</li>
+                        <li>Blog</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Konfirmasi Pembayaran</h3>
+                    <ul>
+                        <li>Kebijakan Privasi</li>
+                        <li>Syarat & Ketentuan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tur & Pengalaman BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Pabrik BUMDes</li>
+                        <li>Pameran</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Dapatkan Update Terbaru</h3>
+                <p>Jadilah yang pertama mengetahui berita terbaru dari BUMDes Nangggerang</p>
+                <input type="email" placeholder="me@mail.com">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <span>Follow Us:</span>
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">TT</a>
+                <a href="#">WA</a>
+            </div>
+            <p>BUMDes Nangggerang © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add click event listeners to all "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const productCard = e.target.closest('.product-card');
+                const productName = productCard.querySelector('h3').textContent;
+                const productPrice = productCard.querySelector('.price').textContent;
+                
+                // Create cart item object
+                const cartItem = {
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                };
+
+                // Save to localStorage (in a real app, this would be handled by a backend)
+                localStorage.setItem('cartItem', JSON.stringify(cartItem));
+
+                // Show confirmation modal
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    z-index: 1000;
+                    text-align: center;
+                `;
+                
+                modal.innerHTML = `
+                    <h3 style="color: #8B4513; margin-bottom: 1rem;">Item Added to Cart!</h3>
+                    <p style="margin-bottom: 2rem;">${productName} has been added to your cart.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <button onclick="window.location.href='cart.html'" style="background: #8B4513; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer;">View Cart</button>
+                        <button onclick="this.parentElement.parentElement.remove()" style="background: #666; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer;">Continue Shopping</button>
+                    </div>
+                `;
+
+                // Add overlay
+                const overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.5);
+                    z-index: 999;
+                `;
+                overlay.onclick = () => {
+                    modal.remove();
+                    overlay.remove();
+                };
+
+                document.body.appendChild(overlay);
+                document.body.appendChild(modal);
+
+                // Update cart count in header
+                const cartBtn = document.querySelector('.cart-btn');
+                const currentCount = parseInt(cartBtn.textContent.match(/\d+/)[0]);
+                cartBtn.textContent = cartBtn.textContent.replace(/\d+/, currentCount + 1);
+            });
+        });
+    </script>
+</body>
+</html>
