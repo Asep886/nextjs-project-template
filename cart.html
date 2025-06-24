@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart - BUMDes Nangggerang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cart.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="https://placehold.co/50x50/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <a href="/">Beranda</a>
+                <a href="about.html">Tentang BUMDes</a>
+                <a href="products.html">Rumah BUMDes</a>
+                <a href="events.html">Hadiah dan Acara</a>
+                <a href="contact.html">Kontak</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="shop-btn">Shop</a>
+                <a href="#" class="search-btn">🔍</a>
+                <a href="cart.html" class="cart-btn">🛒 0 items</a>
+                <a href="#" class="account-btn">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <h1>Your Shopping Cart</h1>
+            <div class="cart-content">
+                <div class="empty-cart">
+                    <p>Your cart is currently empty.</p>
+                </div>
+                <button class="return-shop">RETURN TO SHOP</button>
+            </div>
+        </div>
+
+        <section class="products-section">
+            <h2>KERAJINAN</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=AYAKAN" alt="Ayakan">
+                    <h3>AYAKAN</h3>
+                    <p class="price">Rp75.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=BOBOKO" alt="Boboko">
+                    <h3>BOBOKO</h3>
+                    <p class="price">Rp30.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=GELAS+BAMBU" alt="Gelas Bambu">
+                    <h3>GELAS BAMBU</h3>
+                    <p class="price">Rp10.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=HIHID" alt="Hihid/Kipas Sate">
+                    <h3>HIHID/KIPAS SATE</h3>
+                    <p class="price">Rp70.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://placehold.co/200x200/8B4513/ffffff?text=SAPU+LIDI" alt="Sapu Lidi">
+                    <h3>SAPU LIDI</h3>
+                    <p class="price">Rp20.000</p>
+                    <button class="add-to-cart">ADD TO CART</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://placehold.co/150x150/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                <h3>BUMDes Desa Nangggerang</h3>
+                <p>Cigelontang - Tasikmalaya</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Pesona BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Sertifikasi</li>
+                        <li>Blog</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Konfirmasi Pembayaran</h3>
+                    <ul>
+                        <li>Kebijakan Privasi</li>
+                        <li>Syarat & Ketentuan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tur & Pengalaman BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Pabrik BUMDes</li>
+                        <li>Pameran</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Dapatkan Update Terbaru</h3>
+                <p>Jadilah yang pertama mengetahui berita terbaru dari BUMDes Nangggerang</p>
+                <input type="email" placeholder="me@mail.com">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <span>Follow Us:</span>
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">TT</a>
+                <a href="#">WA</a>
+            </div>
+            <p>BUMDes Nangggerang © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to update cart display
+        function updateCart() {
+            const cartContent = document.querySelector('.cart-content');
+            const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+
+            if (cartItem) {
+                cartContent.innerHTML = `
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <img src="https://placehold.co/100x100/8B4513/ffffff?text=${cartItem.name}" alt="${cartItem.name}">
+                            <div class="item-details">
+                                <h3>${cartItem.name}</h3>
+                                <p class="price">${cartItem.price}</p>
+                                <div class="quantity">
+                                    <button onclick="updateQuantity(-1)">-</button>
+                                    <span>${cartItem.quantity}</span>
+                                    <button onclick="updateQuantity(1)">+</button>
+                                </div>
+                            </div>
+                            <button class="remove-item" onclick="removeItem()">×</button>
+                        </div>
+                        <div class="cart-summary">
+                            <div class="subtotal">
+                                <span>Subtotal:</span>
+                                <span>${cartItem.price}</span>
+                            </div>
+                            <button class="checkout-btn" onclick="proceedToPayment()">PROCEED TO PAYMENT</button>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Function to update quantity
+        function updateQuantity(change) {
+            const cartItem = JSON.parse(localStorage.getItem('cartItem'));
+            cartItem.quantity = Math.max(1, cartItem.quantity + change);
+            localStorage.setItem('cartItem', JSON.stringify(cartItem));
+            updateCart();
+        }
+
+        // Function to remove item
+        function removeItem() {
+            localStorage.removeItem('cartItem');
+            location.reload();
+        }
+
+        // Function to proceed to payment
+        function proceedToPayment() {
+            window.location.href = 'payment.html';
+        }
+
+        // Initialize cart on page load
+        document.addEventListener('DOMContentLoaded', updateCart);
+    </script>
+</body>
+</html>
