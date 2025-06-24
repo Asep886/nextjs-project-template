@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pembayaran - BUMDes Nangggerang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/payment.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="https://placehold.co/50x50/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                </a>
+            </div>
+            <div class="nav-center">
+                <a href="/">Beranda</a>
+                <a href="about.html">Tentang BUMDes</a>
+                <a href="products.html">Rumah BUMDes</a>
+                <a href="events.html">Hadiah dan Acara</a>
+                <a href="contact.html">Kontak</a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="shop-btn">Shop</a>
+                <a href="#" class="search-btn">🔍</a>
+                <a href="cart.html" class="cart-btn">🛒 1 items</a>
+                <a href="#" class="account-btn">👤</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="payment-container">
+            <div class="payment-steps">
+                <div class="step active">1. Keranjang</div>
+                <div class="step active">2. Pengiriman</div>
+                <div class="step active">3. Pembayaran</div>
+            </div>
+
+            <div class="payment-content">
+                <div class="payment-methods">
+                    <h2>Pilih Metode Pembayaran</h2>
+                    <div class="method-options">
+                        <div class="method-card">
+                            <input type="radio" name="payment" id="transfer" checked>
+                            <label for="transfer">
+                                <img src="https://placehold.co/100x40/8B4513/ffffff?text=BANK" alt="Bank Transfer">
+                                <span>Transfer Bank</span>
+                            </label>
+                        </div>
+                        <div class="method-card">
+                            <input type="radio" name="payment" id="ewallet">
+                            <label for="ewallet">
+                                <img src="https://placehold.co/100x40/8B4513/ffffff?text=EWALLET" alt="E-Wallet">
+                                <span>E-Wallet</span>
+                            </label>
+                        </div>
+                        <div class="method-card">
+                            <input type="radio" name="payment" id="cod">
+                            <label for="cod">
+                                <img src="https://placehold.co/100x40/8B4513/ffffff?text=COD" alt="Cash on Delivery">
+                                <span>Cash on Delivery</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Ringkasan Pesanan</h2>
+                    <div class="order-items">
+                        <div class="order-item">
+                            <img src="https://placehold.co/80x80/8B4513/ffffff?text=BOBOKO" alt="Boboko">
+                            <div class="item-details">
+                                <h3>BOBOKO</h3>
+                                <p>Quantity: 1</p>
+                                <p class="price">Rp30.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-totals">
+                        <div class="subtotal">
+                            <span>Subtotal</span>
+                            <span>Rp30.000</span>
+                        </div>
+                        <div class="shipping">
+                            <span>Biaya Pengiriman</span>
+                            <span>Rp10.000</span>
+                        </div>
+                        <div class="total">
+                            <span>Total</span>
+                            <span>Rp40.000</span>
+                        </div>
+                    </div>
+                    <button class="pay-button">BAYAR SEKARANG</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://placehold.co/150x150/8B4513/ffffff?text=LOGO" alt="BUMDes Logo">
+                <h3>BUMDes Desa Nangggerang</h3>
+                <p>Cigelontang - Tasikmalaya</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Pesona BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Sertifikasi</li>
+                        <li>Blog</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Konfirmasi Pembayaran</h3>
+                    <ul>
+                        <li>Kebijakan Privasi</li>
+                        <li>Syarat & Ketentuan</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Tur & Pengalaman BUMDes Nangggerang</h3>
+                    <ul>
+                        <li>Pabrik BUMDes</li>
+                        <li>Pameran</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Dapatkan Update Terbaru</h3>
+                <p>Jadilah yang pertama mengetahui berita terbaru dari BUMDes Nangggerang</p>
+                <input type="email" placeholder="me@mail.com">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-links">
+                <span>Follow Us:</span>
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="#">YT</a>
+                <a href="#">TT</a>
+                <a href="#">WA</a>
+            </div>
+            <p>BUMDes Nangggerang © 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add click event to pay button
+        document.querySelector('.pay-button').addEventListener('click', function() {
+            alert('Pembayaran berhasil! Terima kasih telah berbelanja di BUMDes Nangggerang.');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
